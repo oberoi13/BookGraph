@@ -1,0 +1,102 @@
+﻿@page
+@model kiretfinalexam.Pages.Bookss.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Books[0].name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Books[0].Date)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Books[0].type)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Books[0].publisher)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Books[0].language)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Books[0].NumberOfPages)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Books[0].isbn10)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Books[0].isbn13)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Books[0].weight)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Books[0].dimensions)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Books[0].rank)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Books[0].review)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Books) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Date)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.type)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.publisher)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.language)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NumberOfPages)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.isbn10)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.isbn13)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.weight)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.dimensions)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.rank)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.review)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.BooksID">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.BooksID">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.BooksID">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

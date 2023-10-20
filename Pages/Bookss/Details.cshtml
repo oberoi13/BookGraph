@@ -1,0 +1,115 @@
+﻿@page
+@model kiretfinalexam.Pages.Bookss.DetailsModel
+
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>Books</h4>
+    <hr />
+    <div>
+    <img src="../BookImages/@(Model.Books?.name).jpg" alt="Author Image" style="max-width: 250px;" />
+</div>
+<br />
+  
+    @for (int i = 0; i < 2; i++)
+    {
+        <tr>
+            <td>
+                @Html.DisplayNameFor(item => item.Author.AName)
+            </td>
+            <td>
+                <a asp-page="../Authors/Details" asp-route-id="@Model.Author?.AuthorId"> @Html.DisplayFor(model => model.Author.AName)</a>
+            </td>
+
+        </tr>
+    }
+    
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Books.name)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Books.name)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Books.Date)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Books.Date)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Books.type)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Books.type)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Books.publisher)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Books.publisher)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Books.language)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Books.language)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Books.NumberOfPages)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Books.NumberOfPages)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Books.isbn10)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Books.isbn10)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Books.isbn13)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Books.isbn13)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Books.weight)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Books.weight)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Books.dimensions)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Books.dimensions)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Books.rank)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Books.rank)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Books.review)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Books.review)
+        </dd>
+    </dl>
+</div>
+@foreach( var a in Model.Books.Authors)
+{
+   @a.AName
+}
+
+<div>
+    <a asp-page="./Edit" asp-route-id="@Model.Books?.BooksID">Edit</a> |
+    <a asp-page="./Index">Back to List</a>
+</div>

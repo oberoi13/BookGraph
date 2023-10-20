@@ -1,0 +1,94 @@
+﻿@page
+@model kiretfinalexam.Pages.Bookss.DeleteModel
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h1>Delete</h1>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Books</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Books.name)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Books.name)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Books.Date)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Books.Date)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Books.type)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Books.type)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Books.publisher)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Books.publisher)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Books.language)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Books.language)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Books.NumberOfPages)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Books.NumberOfPages)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Books.isbn10)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Books.isbn10)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Books.isbn13)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Books.isbn13)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Books.weight)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Books.weight)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Books.dimensions)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Books.dimensions)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Books.rank)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Books.rank)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Books.review)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Books.review)
+        </dd>
+    </dl>
+    
+    <form method="post">
+        <input type="hidden" asp-for="Books.BooksID" />
+        <input type="submit" value="Delete" class="btn btn-danger" /> |
+        <a asp-page="./Index">Back to List</a>
+    </form>
+</div>
